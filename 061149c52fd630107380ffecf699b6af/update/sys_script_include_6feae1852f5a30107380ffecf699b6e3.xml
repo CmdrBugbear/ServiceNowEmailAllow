@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_574475_devtest_e.APSLog</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description/>
+        <name>APSLog</name>
+        <script><![CDATA[var APSLog = Class.create();
+APSLog.prototype = {
+    initialize: function(strNewTable, strNewRecord) {
+        this.strTable = strNewTable; // The name of the table that hosts the script being executed e.g. sys_script_fix
+        this.strRecord = strNewRecord; // The name (or sys_id) of the script being executed e.g. 'APS Fix Script'
+        this.order = false; // Specify whether to wait 1ms after writing the current log record.
+    },
+
+	/* No point - this depends on gs.sleep() which is not available in scoped apps
+    setOrder: function(blnNewOrder) {
+        this.order = blnNewOrder;
+    },
+	*/
+	
+	info: function(strMsg) {
+		this.log(strMsg, 'Email Allow application');
+	},
+	
+    log: function(strMsg) {
+        var dtm = new GlideDateTime();
+        gs.info(dtm.getNumericValue() + ':' + this.strTable + '.' + this.strRecord + ':' + strMsg, 'Email Allow application');
+		/* No point - gs.sleep() is not available in scoped apps
+        if (this.order) {
+            gs.sleep(1);
+        }
+		*/
+    },
+
+	type: 'APSLog'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-08-29 06:17:36</sys_created_on>
+        <sys_id>6feae1852f5a30107380ffecf699b6e3</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>APSLog</sys_name>
+        <sys_package display_value="DevTest Email Allow List" source="x_574475_devtest_e">061149c52fd630107380ffecf699b6af</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="DevTest Email Allow List">061149c52fd630107380ffecf699b6af</sys_scope>
+        <sys_update_name>sys_script_include_6feae1852f5a30107380ffecf699b6e3</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-08-29 06:49:41</sys_updated_on>
+    </sys_script_include>
+</record_update>
