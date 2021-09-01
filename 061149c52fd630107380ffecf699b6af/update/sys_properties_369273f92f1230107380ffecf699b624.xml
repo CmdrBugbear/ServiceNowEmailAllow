@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_properties">
+    <sys_properties action="INSERT_OR_UPDATE">
+        <choices/>
+        <description>Send emails to addresses that are allowed to recieve emails from this instance.&#13;
+&#13;
+If disabled, then the System Mailboxes &gt; Email Properties settings are respected.</description>
+        <ignore_cache>true</ignore_cache>
+        <is_private>false</is_private>
+        <name>x_574475_devtest_e.Enabled</name>
+        <read_roles/>
+        <suffix>Enabled</suffix>
+        <sys_class_name>sys_properties</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-09-01 00:04:25</sys_created_on>
+        <sys_id>369273f92f1230107380ffecf699b624</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>x_574475_devtest_e.Enabled</sys_name>
+        <sys_package display_value="DevTest Email Allow List" source="x_574475_devtest_e">061149c52fd630107380ffecf699b6af</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="DevTest Email Allow List">061149c52fd630107380ffecf699b6af</sys_scope>
+        <sys_update_name>sys_properties_369273f92f1230107380ffecf699b624</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-09-01 00:10:04</sys_updated_on>
+        <type>boolean</type>
+        <value>false</value>
+        <write_roles/>
+    </sys_properties>
+    <sys_translated_text action="delete_multiple" query="documentkey=369273f92f1230107380ffecf699b624"/>
+</record_update>

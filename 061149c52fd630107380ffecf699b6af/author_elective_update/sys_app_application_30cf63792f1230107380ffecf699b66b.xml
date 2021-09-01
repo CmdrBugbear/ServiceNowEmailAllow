@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_app_application">
+    <sys_app_application action="DELETE">
+        <active>true</active>
+        <category display_value="Custom Applications">e0355b31ef303000a61d5a3615c0fb78</category>
+        <description/>
+        <device_type>browser</device_type>
+        <hint/>
+        <name/>
+        <order>100</order>
+        <roles>x_574475_devtest_e.email_allow_admin,admin</roles>
+        <sys_class_name>sys_app_application</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-08-31 23:51:15</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>30cf63792f1230107380ffecf699b66b</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>DevTest Email Allow Administration</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="DevTest Email Allow List" source="x_574475_devtest_e">061149c52fd630107380ffecf699b6af</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="DevTest Email Allow List">061149c52fd630107380ffecf699b6af</sys_scope>
+        <sys_update_name>sys_app_application_30cf63792f1230107380ffecf699b66b</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-08-31 23:54:55</sys_updated_on>
+        <title>DevTest Email Allow Administration</title>
+        <view_name/>
+    </sys_app_application>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="DevTest Email Allow List">061149c52fd630107380ffecf699b6af</application>
+        <file_path/>
+        <instance_id>02c54782db9b0c58b847ac44d49619b5</instance_id>
+        <instance_name>dev102098</instance_name>
+        <name>sys_app_application_30cf63792f1230107380ffecf699b66b</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_app_application"><sys_app_application action="INSERT_OR_UPDATE"><active>true</active><category display_value="Custom Applications">e0355b31ef303000a61d5a3615c0fb78</category><description/><device_type>browser</device_type><hint/><name/><order>100</order><roles>x_574475_devtest_e.email_allow_admin,admin</roles><sys_class_name>sys_app_application</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2021-08-31 23:51:15</sys_created_on><sys_domain>global</sys_domain><sys_domain_path>/</sys_domain_path><sys_id>30cf63792f1230107380ffecf699b66b</sys_id><sys_mod_count>1</sys_mod_count><sys_name>DevTest Email Allow Administration</sys_name><sys_overrides/><sys_package display_value="DevTest Email Allow List" source="x_574475_devtest_e">061149c52fd630107380ffecf699b6af</sys_package><sys_policy/><sys_scope display_value="DevTest Email Allow List">061149c52fd630107380ffecf699b6af</sys_scope><sys_update_name>sys_app_application_30cf63792f1230107380ffecf699b66b</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2021-08-31 23:54:55</sys_updated_on><title>DevTest Email Allow Administration</title><view_name/></sys_app_application></record_update>]]></payload>
+        <payload_hash>1376525036</payload_hash>
+        <record_name>DevTest Email Allow Administration</record_name>
+        <reverted_from/>
+        <source>c212de592f5670107380ffecf699b684</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-08-31 23:54:55</sys_created_on>
+        <sys_id>e7d0ff792f1230107380ffecf699b621</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>17b9ea31ece0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-08-31 23:54:55</sys_updated_on>
+        <type>Application Menu</type>
+        <update_guid>efd0ff79a9123010abb63fca27421e20</update_guid>
+        <update_guid_history>efd0ff79a9123010abb63fca27421e20:1376525036,ce00377988123010be3c1842fe4f8a3a:-695667191</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="DevTest Email Allow Administration">bb3233f92f1230107380ffecf699b646</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-09-01 00:00:57</sys_created_on>
+        <sys_db_object display_value="" name="sys_app_application">sys_app_application</sys_db_object>
+        <sys_id>3ad6004343994562a0ed0be5ae9443e4</sys_id>
+        <sys_metadata>30cf63792f1230107380ffecf699b66b</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>DevTest Email Allow Administration</sys_name>
+        <sys_package display_value="DevTest Email Allow List" source="x_574475_devtest_e">061149c52fd630107380ffecf699b6af</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="DevTest Email Allow List">061149c52fd630107380ffecf699b6af</sys_scope>
+        <sys_scope_delete display_value="">12358328f60e4c0899f7be6af22b1b10</sys_scope_delete>
+        <sys_update_name>sys_app_application_30cf63792f1230107380ffecf699b66b</sys_update_name>
+        <sys_update_version display_value="sys_app_application_30cf63792f1230107380ffecf699b66b">e7d0ff792f1230107380ffecf699b621</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-09-01 00:00:57</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>
