@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
-    <element label="Email Allow" max_length="40" name="x_574475_devtest_e_email_allow" sizeclass="2" type="collection">
+    <element label="Email Allow" max_length="40" name="x_574475_devtest_e_email_allow" sizeclass="3" type="collection">
         <element label="Active" max_length="40" name="active" type="boolean"/>
         <element label="Allow all" max_length="40" name="allow_all" type="boolean"/>
         <element label="Allow direct" max_length="40" name="allow_direct" type="boolean"/>
+        <element label="Email address" max_length="255" name="email_address" type="string"/>
         <element attributes="encode_utf8=false" label="User" max_length="32" name="user" reference="sys_user" type="reference"/>
         <index name="index">
             <element name="user"/>
