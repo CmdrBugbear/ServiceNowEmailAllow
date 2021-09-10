@@ -49,23 +49,23 @@
     // BCC: = blind_copied
     var alog = new APSLog('sys_script', 'Email Allow check list');
     //alog.setOrder(true); // Function not supported in scoped apps
-    alog.log('BEGIN');
+    alog.log('BEGIN', DEBUG);
     var astrRecipientFields = ['direct', 'copied', 'blind_copied'];
     for (var i = 0; i < astrRecipientFields.length; i++) {
         var strRecipientField = astrRecipientFields[i];
-        alog.log('Inspecting field ' + strRecipientField);
+        alog.log('Inspecting field ' + strRecipientField, DEBUG);
         // Grab the email addresses from current.strRecpientField - should be a comma separated list
         var strFieldValue = current.getValue(strRecipientField);
-        alog.log(strRecipientField + ' = ' + strFieldValue);
+        alog.log(strRecipientField + ' = ' + strFieldValue, DEBUG);
         if (gs.nil(strFieldValue)) {
-            alog.log('No ' + strRecipientField + ' addresses.  Skipping field...');
+            alog.log('No ' + strRecipientField + ' addresses.  Skipping field...', DEBUG);
             continue;
         }
         var astrAddresses = (current.getValue(strRecipientField)).split(',');
         var astrAllowedAddresses = []; // This will be an array of email addresses
         for (var j = 0; j < astrAddresses.length; j++) {
             var strAddress = astrAddresses[i];
-			alog.log('Processing ' + strRecipientField + ' recipient: ' + strAddress);
+			alog.log('Processing ' + strRecipientField + ' recipient: ' + strAddress, DEBUG);
             // Inspect the Email Allow state of this user
             var grEmailAllowedUser = new GlideRecord('x_574475_devtest_e_email_allow');
             grEmailAllowedUser.addEncodedQuery('user.email=' + strAddress + '^active=true^allow_direct=true');
@@ -73,16 +73,16 @@
             if (grEmailAllowedUser.hasNext()) {
                 if (gs.getProperty('x_574475_devtest_e.active')) {
                     // Allowing email to be sent to strAddress
-                    alog.log('(debug) Email to be sent to address: ' + strAddress);
+                    alog.log('(debug) Email to be sent to address: ' + strAddress, DEBUG);
                     //astrAllowedAddresses.push(strAddress);
                 } else {
                     // Allowing email to be sent to strAddress
-                    alog.log('Email to be sent to address: ' + strAddress);
+                    alog.log('Email to be sent to address: ' + strAddress, INFO);
                     astrAllowedAddresses.push(strAddress);
                 }
             } else {
                 // Blocking email from being sent to strAddress
-                alog.log('Email blocked from address: ' + strAddress);
+                alog.log('Email blocked from address: ' + strAddress, INFO);
             }
         }
         var strAddresses = ''; // This will be a csv list of allowed addresses
@@ -94,7 +94,7 @@
 			strAddressess = strAddresses.substring(0, strAddresses.length - 1);
 			current.setValue(strRecipientField, strAddresses);
 		}
-        alog.log('Finished processing: ' + strRecipientField);
+        alog.log('Finished processing: ' + strRecipientField, INFO);
     }
 
     
@@ -105,10 +105,10 @@
     grEmailGlobalUser.query();
     while (grEmailGlobalUser.next()) {
 		if(gs.getProperty('x_574475_devtest_e.active')){
-			alog.log('Email to be sent to global recipient address: ' + grEmailGlobalUser.user.email);
+			alog.log('Email to be sent to global recipient address: ' + grEmailGlobalUser.user.email, INFO);
 			strDirect += grEmailGlobalUser.user.email + ',';
 		} else {
-			alog.log('(debug) Email to be sent to global recipient address: ' + grEmailGlobalUser.user.email);
+			alog.log('(debug) Email to be sent to global recipient address: ' + grEmailGlobalUser.user.email, DEBUG);
 		}
     }
 	if(gs.getProperty('x_574475_devtest_e.active')){
@@ -117,8 +117,8 @@
 		// Append strDirect to the Direct recipients
 		current.setValue('direct', current.getValue('direct') + ',' + strDirect);
 	}
-	alog.log('Finished adding global recipients to email.');
-    alog.log('END');
+	alog.log('Finished adding global recipients to email.', DEBUG);
+    alog.log('END', DEBUG);
 })(current, previous);]]></script>
         <sys_class_name>sys_script</sys_class_name>
         <sys_created_by>admin</sys_created_by>
@@ -126,7 +126,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>a06241492fd630107380ffecf699b619</sys_id>
-        <sys_mod_count>28</sys_mod_count>
+        <sys_mod_count>30</sys_mod_count>
         <sys_name>Email Allow check list</sys_name>
         <sys_overrides/>
         <sys_package display_value="DevTest Email Allow List" source="x_574475_devtest_e">061149c52fd630107380ffecf699b6af</sys_package>
@@ -134,7 +134,7 @@
         <sys_scope display_value="DevTest Email Allow List">061149c52fd630107380ffecf699b6af</sys_scope>
         <sys_update_name>sys_script_a06241492fd630107380ffecf699b619</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2021-09-09 00:00:45</sys_updated_on>
+        <sys_updated_on>2021-09-09 23:55:36</sys_updated_on>
         <template/>
         <when>before</when>
     </sys_script>

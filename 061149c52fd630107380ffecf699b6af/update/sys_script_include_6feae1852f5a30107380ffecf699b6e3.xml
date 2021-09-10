@@ -13,7 +13,7 @@ APSLog.prototype = {
         this.strTable = strNewTable; // The name of the table that hosts the script being executed e.g. sys_script_fix
         this.strRecord = strNewRecord; // The name (or sys_id) of the script being executed e.g. 'APS Fix Script'
         this.order = false; // Specify whether to wait 1ms after writing the current log record.
-		this.level = 1; // By default, output informational messages only
+		this.level = gs.getProperty('x_574475_devtest_e.debug_level'); // By default, output informational messages only
 		
 		this.ALWAYS = 0;
 		this.INFO = 1;
@@ -33,7 +33,24 @@ APSLog.prototype = {
 	},
 	
 	log: function(strMsg, intLevel){
+		if(arguments.length == 1){
+			intLevel = this.INFO;
+		}
 		if(intLevel <= this.level){
+			switch (intLevel) {
+				case this.ALWAYS:
+				case this.INFO:
+					break;
+				case this.WARNING:
+					strMsg = 'WARNING: ' + strMsg;
+					break;
+				case this.ERROR:
+					strMsg = 'ERROR: ' + strMsg;
+					break;
+				case this.DEBUG:
+					strMsg = 'DEBUG: ' + strMsg;
+					break;
+			}
 			this._log(strMsg);
 		}
 		
@@ -55,13 +72,13 @@ APSLog.prototype = {
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2021-08-29 06:17:36</sys_created_on>
         <sys_id>6feae1852f5a30107380ffecf699b6e3</sys_id>
-        <sys_mod_count>5</sys_mod_count>
+        <sys_mod_count>6</sys_mod_count>
         <sys_name>APSLog</sys_name>
         <sys_package display_value="DevTest Email Allow List" source="x_574475_devtest_e">061149c52fd630107380ffecf699b6af</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="DevTest Email Allow List">061149c52fd630107380ffecf699b6af</sys_scope>
         <sys_update_name>sys_script_include_6feae1852f5a30107380ffecf699b6e3</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2021-09-09 00:02:29</sys_updated_on>
+        <sys_updated_on>2021-09-09 23:48:08</sys_updated_on>
     </sys_script_include>
 </record_update>
